@@ -1,0 +1,14 @@
+sht1x-python Changelog
+===============
+
+Here you can see the full list of changes between each release.
+
+Version 1.0.1 - 1.0.5
+-------------
+Added reStructuredText README.
+Update setup.py logic to use the .rst for PyPI.
+Numerous README updates.
+
+Version 1.0.0
+-------------
+(Initial release)

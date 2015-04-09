@@ -1,0 +1,11 @@
+include CHANGES LICENSE AUTHORS README.md README.rst
+recursive-include tests *
+recursive-include docs *
+recursive-include examples *
+
+recursive-exclude tests *.pyc
+recursive-exclude tests *.pyo
+recursive-exclude docs *.pyc
+recursive-exclude docs *.pyo
+recursive-exclude examples *.pyc
+recursive-exclude examples *.pyo
