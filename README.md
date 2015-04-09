@@ -4,9 +4,9 @@ The pi-sht1x package is a Python 3 library used to communicate and control the S
 
 SHT1x (including SHT10, SHT11 and SHT15) is Sensirion’s family of surface mountable relative humidity and temperature sensors. The sensors integrate sensor elements plus signal processing on a tiny foot print and provide a fully calibrated digital output. A unique capacitive sensor element is used for measuring relative humidity while temperature is measured by a band-gap sensor.
 
-The package was tested using the Raspberry Pi B+ and Raspberry Pi 2. There shouldn't be issues running this on the older models, but no guarantees. If you do run into any problems, please let me know or create an [issue](https://bitbucket.org/drohm/pi-sht1x/issues?status=new&status=open) on the Bitbucket project page:
+The package was tested using the Raspberry Pi B+ and Raspberry Pi 2. There shouldn't be issues running this on the older models, but no guarantees. If you do run into any problems, please let me know or create an [issue](https://github.com/drohm/pi-sht1x/issues) on the GitHub project page:
 
-	https://bitbucket.org/drohm/pi-sht1x
+	https://github.com/drohm/pi-sht1x
 
 The data sheet for the SHT1x series of sensors can be found here:
 
