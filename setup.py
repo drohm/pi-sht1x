@@ -13,6 +13,8 @@ _version_re = re.compile(r'__version__\s+=\s+(.*)')
 with open('pi_sht1x/__init__.py', 'rb') as f:
     version = str(ast.literal_eval(_version_re.search(f.read().decode('utf-8')).group(1)))
 
+download_url = 'https://github.com/drohm/pi-sht1x/releases/tag/{0}'.format(version)
+
 classifiers = ['Development Status :: 5 - Production/Stable',
                'Environment :: Console',
                'Intended Audience :: Developers',
@@ -42,7 +44,7 @@ setup(
     description='Python 3 library for Sensirion SHT1x series of temperature & humidity sensors for the Raspberry Pi.',
     long_description=long_description,
     include_package_data=True,
-    download_url='https://github.com/drohm/pi-sht1x/releases/tag/1.0.6',
+    download_url=download_url,
     packages=['pi_sht1x', 'examples'],
     install_requires=[
         'RPi.GPIO>=0.5.11',
