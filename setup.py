@@ -42,7 +42,7 @@ setup(
     description='Python 3 library for Sensirion SHT1x series of temperature & humidity sensors for the Raspberry Pi.',
     long_description=long_description,
     include_package_data=True,
-    download_url='https://github.com/drohm/pi-sht1x/archive/master.zip',
+    download_url='https://github.com/drohm/pi-sht1x/releases/tag/1.0.6',
     packages=['pi_sht1x', 'examples'],
     install_requires=[
         'RPi.GPIO>=0.5.11',
