@@ -1,4 +1,4 @@
 __author__ = 'Doug Rohm'
-__version__ = '1.0.6'
+__version__ = '1.0.7'
 
 from .sht1x import SHT1x, SHT1xError
