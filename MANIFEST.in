@@ -1,4 +1,7 @@
-﻿include CHANGES LICENSE AUTHORS README.md README.rst
+﻿include CHANGES LICENSE AUTHORS
+include README.rst
+include README.md
+
 recursive-include tests *
 recursive-include docs *
 recursive-include examples *
