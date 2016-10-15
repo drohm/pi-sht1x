@@ -42,7 +42,8 @@ def main():
 
     mode = GPIO.BCM if args.gpio_mode.upper() == 'BCM' else GPIO.BOARD
     with SHT1x(args.data_pin, args.sck_pin, gpio_mode=mode, vdd=args.vdd, resolution=args.resolution,
-               heater=args.heater, otp_no_reload=args.otp_no_reload, crc_check=args.no_crc_check, logger=logger) as sensor:
+               heater=args.heater, otp_no_reload=args.otp_no_reload, crc_check=args.no_crc_check,
+               logger=logger) as sensor:
         for i in range(5):
             temp = sensor.read_temperature()
             humidity = sensor.read_humidity(temp)
