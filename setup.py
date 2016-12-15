@@ -52,7 +52,7 @@ setup(
     classifiers=classifiers,
     keywords=[
         'sht', 'sensor', 'sht1x', 'sensirion', 'T', 'temperature', 'humidity', 'RH',
-        'dew point', 'celsius', 'measurement', 'gpio', 'serial', '2-wire', 'crc', 'crc-8'
+        'dew point', 'celsius', 'measurement', 'gpio', 'serial', '2-wire', 'crc', 'crc-8',
         'hardware', 'driver', 'ic'
     ]
 )
