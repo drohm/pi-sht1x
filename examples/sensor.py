@@ -3,6 +3,12 @@ import argparse
 import RPi.GPIO as GPIO
 from pi_sht1x import SHT1x
 
+import logging
+import sys
+
+logger = logging.getLogger()
+logging.basicConfig(stream=sys.stdout, level=logging.ERROR)
+
 
 class Choices(list):
     def __contains__(self, item):
@@ -28,11 +34,16 @@ def main():
     parser.add_argument('-o', '--otp-no-reload', action='store_true',
                         help='Used to enable OTP no reload, will save about 10ms per measurement.')
     parser.add_argument('-c', '--no-crc-check', action='store_false', help='Performs CRC checking.')
+    parser.add_argument('-d', '--debug', action='store_true', help='Enable debug logging.')
     args = parser.parse_args()
+
+    if args.debug:
+        logger.setLevel(logging.DEBUG)
 
     mode = GPIO.BCM if args.gpio_mode.upper() == 'BCM' else GPIO.BOARD
     with SHT1x(args.data_pin, args.sck_pin, gpio_mode=mode, vdd=args.vdd, resolution=args.resolution,
-               heater=args.heater, otp_no_reload=args.otp_no_reload, crc_check=args.no_crc_check) as sensor:
+               heater=args.heater, otp_no_reload=args.otp_no_reload, crc_check=args.no_crc_check,
+               logger=logger) as sensor:
         for i in range(5):
             temp = sensor.read_temperature()
             humidity = sensor.read_humidity(temp)

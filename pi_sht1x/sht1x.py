@@ -57,7 +57,7 @@ class SHT1x:
     VDD = {'5V': 5, '4V': 4, '3.5V': 3.5, '3V': 3, '2.5V': 2.5}
 
     def __init__(self, data_pin, sck_pin, gpio_mode=GPIO.BOARD, vdd='3.5V', resolution='High',
-                 heater=False, otp_no_reload=False, crc_check=True):
+                 heater=False, otp_no_reload=False, crc_check=True, logger=None):
         self.data_pin = data_pin
         self.sck_pin = sck_pin
         self.gpio_mode = gpio_mode
@@ -72,7 +72,7 @@ class SHT1x:
         self.temperature_fahrenheit = None
         self.humidity = None
         self.dew_point = None
-        self._logger = None
+        self._logger = logger
 
         GPIO.setmode(self.gpio_mode)
         self.initialize_sensor()
