@@ -1,5 +1,5 @@
 from os import path
-from logging import getLogger, Formatter, INFO
+from logging import getLogger, Formatter, WARNING
 from logging.handlers import RotatingFileHandler
 
 
@@ -17,11 +17,11 @@ def create_logger(name):
     log_formatter = Formatter(LOG_FORMAT)
 
     file_handler = RotatingFileHandler(log_filename, mode='a', maxBytes=512000, backupCount=3)
-    file_handler.setLevel(INFO)
+    file_handler.setLevel(WARNING)
     file_handler.setFormatter(log_formatter)
 
     del logger.handlers[:]
     logger.addHandler(file_handler)
-    logger.setLevel(INFO)
+    logger.setLevel(WARNING)
 
     return logger
