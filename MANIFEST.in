@@ -1,4 +1,4 @@
-﻿include CHANGES LICENSE AUTHORS
+include CHANGES LICENSE AUTHORS
 include README.rst
 include README.md
 
