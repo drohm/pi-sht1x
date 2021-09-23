@@ -273,7 +273,7 @@ class SHT1x:
         Raises an exception if the Data Ready signal hasn't been received after 350 milliseconds.
         :return: None
         """
-        GPIO.setup(self.data_pin, GPIO.IN)
+        GPIO.setup(self.data_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         data_ready = GPIO.HIGH
 
         for i in range(35):
@@ -313,7 +313,7 @@ class SHT1x:
         Reads a single byte from the SHT1x sensor.
         :return: 8-bit value.
         """
-        GPIO.setup(self.data_pin, GPIO.IN)
+        GPIO.setup(self.data_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.sck_pin, GPIO.OUT)
 
         data = 0b00000000
@@ -384,7 +384,7 @@ class SHT1x:
         :param command_name: Command issued to the sensor.
         :return: None
         """
-        GPIO.setup(self.data_pin, GPIO.IN)
+        GPIO.setup(self.data_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.sck_pin, GPIO.OUT)
 
         self._toggle_pin(self.sck_pin, GPIO.HIGH)
