@@ -78,9 +78,9 @@ This will create the SHT1x object using ``data_pin=18``, ``sck_pin=23``, ``gpio_
 
 ::
 
-    Temperature: 24.05*C [75.25*F]
+    Temperature: 24.05°C [75.25°F]
     Humidity: 22.80%
-    Dew Point: 1.38*C
+    Dew Point: 1.38°C
 
 Note that this library should be used with a context manager like the ``with`` statement. Using it with a context manager will allow the program to properly clean up after itself and reset the GPIO pins back to default states.
 
@@ -105,47 +105,47 @@ Running the script exercises all of the functionality for the sensor. Be sure to
 
     $ sudo python3 examples/examples.py
     Test: using default values: 3.5V, High resolution, no heater, otp_no_reload off, CRC checking enabled...
-    Temperature: 24.49*C [76.04*F]
+    Temperature: 24.49°C [76.04°F]
     Humidity: 20.68%
-    Dew Point: 0.47*C
+    Dew Point: 0.47°C
     
-    Temperature: 24.48*C [76.02*F]
+    Temperature: 24.48°C [76.02°F]
     Humidity: 20.68%
-    Dew Point: 0.46*C
+    Dew Point: 0.46°C
     
-    Temperature: 24.47*C [76.01*F]
+    Temperature: 24.47°C [76.01°F]
     Humidity: 20.68%
-    Dew Point: 0.45*C
+    Dew Point: 0.45°C
     
-    Temperature: 24.51*C [76.06*F]
+    Temperature: 24.51°C [76.06°F]
     Humidity: 20.68%
-    Dew Point: 0.47*C
+    Dew Point: 0.47°C
     
-    Temperature: 24.51*C [76.06*F]
+    Temperature: 24.51°C [76.06°F]
     Humidity: 20.68%
-    Dew Point: 0.47*C
+    Dew Point: 0.47°C
     Test complete.
     
     Test: reading all measurements using GPIO.BCM mode, 3V, High resolution, heater off, otp_no_reload off, and CRC check on.
-    Temperature: 24.48*C [76.02*F]
+    Temperature: 24.48°C [76.02°F]
     Humidity: 20.61%
-    Dew Point: 0.42*C
+    Dew Point: 0.42°C
     
-    Temperature: 24.46*C [75.98*F]
+    Temperature: 24.46°C [75.98°F]
     Humidity: 20.61%
-    Dew Point: 0.40*C
+    Dew Point: 0.40°C
     
-    Temperature: 24.46*C [75.98*F]
+    Temperature: 24.46°C [75.98°F]
     Humidity: 20.61%
-    Dew Point: 0.40*C
+    Dew Point: 0.40°C
     
-    Temperature: 24.48*C [76.02*F]
+    Temperature: 24.48°C [76.02°F]
     Humidity: 20.68%
-    Dew Point: 0.46*C
+    Dew Point: 0.46°C
     
-    Temperature: 24.48*C [76.02*F]
+    Temperature: 24.48°C [76.02°F]
     Humidity: 20.65%
-    Dew Point: 0.44*C
+    Dew Point: 0.44°C
     Test complete.
     .
     .
@@ -166,25 +166,25 @@ This executes the sensor script using ``data_pin=18``, ``sck_pin=23``, and ``gpi
 ::
 
     $ sudo python3 examples/sensor.py 18 23 -g 'BCM'
-    Temperature: 24.05*C [75.25*F]
+    Temperature: 24.05°C [75.25°F]
     Humidity: 22.79%
-    Dew Point: 1.37*C
+    Dew Point: 1.37°C
     
-    Temperature: 24.03*C [75.21*F]
+    Temperature: 24.03°C [75.21°F]
     Humidity: 22.79%
-    Dew Point: 1.36*C
+    Dew Point: 1.36°C
     
-    Temperature: 24.01*C [75.16*F]
+    Temperature: 24.01°C [75.16°F]
     Humidity: 22.79%
-    Dew Point: 1.33*C
+    Dew Point: 1.33°C
     
-    Temperature: 24.01*C [75.17*F]
+    Temperature: 24.01°C [75.17°F]
     Humidity: 22.86%
-    Dew Point: 1.38*C
+    Dew Point: 1.38°C
     
-    Temperature: 24.02*C [75.19*F]
+    Temperature: 24.02°C [75.19°F]
     Humidity: 22.86%
-    Dew Point: 1.39*C
+    Dew Point: 1.39°C
 
 To get a listing of all the parameters you can provide to the script, use `python3 sensor.py -h` for help:
 

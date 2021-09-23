@@ -171,7 +171,7 @@ class SHT1x:
         self.temperature_fahrenheit = round(raw_temperature * COF.D2_SO_F[self._resolution[0]] +
                                             COF.D1_VDD_F[self.vdd], 2)
 
-        self.logger.info('Temperature: {0}*C [{1}*F]'.format(self.temperature_celsius, self.temperature_fahrenheit))
+        self.logger.info('Temperature: {0}°C [{1}°F]'.format(self.temperature_celsius, self.temperature_fahrenheit))
         return self.temperature_celsius
 
     def read_humidity(self, temperature=None):
@@ -231,7 +231,7 @@ class SHT1x:
         ew = (m * temperature) / (tn + temperature)
         self.dew_point = round(tn * (log_humidity + ew) / m - (log_humidity + ew), 2)
 
-        self.logger.info('Dew Point: {0}*C'.format(self.dew_point))
+        self.logger.info('Dew Point: {0}°C'.format(self.dew_point))
         return self.dew_point
 
     def _send_command(self, measurement=True):
@@ -273,7 +273,7 @@ class SHT1x:
         Raises an exception if the Data Ready signal hasn't been received after 350 milliseconds.
         :return: None
         """
-        GPIO.setup(self.data_pin, GPIO.IN)
+        GPIO.setup(self.data_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         data_ready = GPIO.HIGH
 
         for i in range(35):
@@ -313,7 +313,7 @@ class SHT1x:
         Reads a single byte from the SHT1x sensor.
         :return: 8-bit value.
         """
-        GPIO.setup(self.data_pin, GPIO.IN)
+        GPIO.setup(self.data_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.sck_pin, GPIO.OUT)
 
         data = 0b00000000
@@ -384,7 +384,7 @@ class SHT1x:
         :param command_name: Command issued to the sensor.
         :return: None
         """
-        GPIO.setup(self.data_pin, GPIO.IN)
+        GPIO.setup(self.data_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
         GPIO.setup(self.sck_pin, GPIO.OUT)
 
         self._toggle_pin(self.sck_pin, GPIO.HIGH)
@@ -557,7 +557,7 @@ class SHT1x:
         humidity = self.humidity if self.humidity is not None else '-'
         dew_point = self.dew_point if self.dew_point is not None else '-'
 
-        return 'Temperature: {0}*C [{1}*F]\nRelative Humidity: {2}%\nDew Point: {3}*C\n'.format(celsius, fahrenheit,
+        return 'Temperature: {0}°C [{1}°F]\nRelative Humidity: {2}%\nDew Point: {3}°C\n'.format(celsius, fahrenheit,
                                                                                                 humidity, dew_point)
 
 

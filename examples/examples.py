@@ -33,7 +33,7 @@ def main():
     with SHT1x(DATA_PIN, SCK_PIN, gpio_mode=GPIO.BCM) as sensor:
         for i in range(5):
             sensor.read_humidity()
-            print('Temperature: {0}*C [{1}*F]\nHumidity: {2}'.format(sensor.temperature_celsius,
+            print('Temperature: {0}°C [{1}°F]\nHumidity: {2}'.format(sensor.temperature_celsius,
                                                                      sensor.temperature_fahrenheit, sensor.humidity))
             sleep(2)
     print('Test complete.\n')
@@ -103,7 +103,7 @@ def main():
     with SHT1x(DATA_PIN, SCK_PIN, gpio_mode=GPIO.BCM) as sensor:
         sensor.reset_connection()
         sensor.read_temperature()
-        print('Temperature: {0}*C [{1}*F]'.format(sensor.temperature_celsius, sensor.temperature_fahrenheit))
+        print('Temperature: {0}°C [{1}°F]'.format(sensor.temperature_celsius, sensor.temperature_fahrenheit))
     print('Test complete.\n')
 
     print('Test: performing a soft reset of the sensor...')
@@ -112,7 +112,7 @@ def main():
         status_register = sensor.read_status_register()
         print('Status Register: {0:08b}'.format(status_register))
         sensor.read_temperature()
-        print('Temperature: {0}*C [{1}*F]'.format(sensor.temperature_celsius, sensor.temperature_fahrenheit))
+        print('Temperature: {0}°C [{1}°F]'.format(sensor.temperature_celsius, sensor.temperature_fahrenheit))
     print('Test complete.\n')
 
     print('Test: resetting the status register...')
@@ -121,7 +121,7 @@ def main():
         status_register = sensor.read_status_register()
         print('Status Register: {0:08b}'.format(status_register))
         sensor.read_temperature()
-        print('Temperature: {0}*C [{1}*F]'.format(sensor.temperature_celsius, sensor.temperature_fahrenheit))
+        print('Temperature: {0}°C [{1}°F]'.format(sensor.temperature_celsius, sensor.temperature_fahrenheit))
     print('Test complete.\n')
 
     print('Test: CRC disabled...')
