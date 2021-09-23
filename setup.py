@@ -40,14 +40,14 @@ setup(
     url='https://github.com/drohm/pi-sht1x',
     license='MIT',
     author=__author__,
-    author_email='pypi@drohm.sent.com',
+    author_email='pypi@dougrohm.com',
     description='Python 3 library for Sensirion SHT1x series of temperature & humidity sensors for the Raspberry Pi.',
     long_description=long_description,
     include_package_data=True,
     download_url=download_url,
     packages=['pi_sht1x', 'examples'],
     install_requires=[
-        'RPi.GPIO>=0.5.11',
+        'RPi.GPIO>=0.7.0',
     ],
     classifiers=classifiers,
     keywords='sht sensor sht1x sensirion T temperature humidity RH dew-point celsius measurement'

@@ -3,6 +3,11 @@
 
 Here you can see the full list of changes between each release.
 
+Version 1.0.10
+-------------
+Update data_pin to use internal PULL_UP (via pinpang)
+Update unit * to ° (via pinpang)
+
 Version 1.0.9
 -------------
 Allow user specified logging instance.
