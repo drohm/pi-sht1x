@@ -1,9 +1,10 @@
-from os import path
+import os
 from logging import getLogger, Formatter, WARNING
 from logging.handlers import RotatingFileHandler
 
 
 LOG_FORMAT = '[%(asctime)s] %(module)12s:%(funcName)12s:%(lineno)-4s %(levelname)-9s %(message)s'
+LOG_FOLDER_NAME = '.pi_sht1x'
 LOG_FILE_NAME = 'pi_sht1x.log'
 
 
@@ -13,10 +14,11 @@ def create_logger(name):
     in case there was a logger with the same name.
     """
     logger = getLogger(name)
-    log_filename = path.join(path.dirname(path.realpath(__file__)), LOG_FILE_NAME)
+    log_filename = os.path.join(_get_log_folder(), LOG_FILE_NAME)
     log_formatter = Formatter(LOG_FORMAT)
 
-    file_handler = RotatingFileHandler(log_filename, mode='a', maxBytes=512000, backupCount=3)
+    file_handler = RotatingFileHandler(log_filename, mode='a',
+                                       maxBytes=512000, backupCount=3)
     file_handler.setLevel(WARNING)
     file_handler.setFormatter(log_formatter)
 
@@ -25,3 +27,17 @@ def create_logger(name):
     logger.setLevel(WARNING)
 
     return logger
+
+
+def _get_log_folder() -> str:
+    """
+    Combine and return realpath of log folder. If the folder does not exist,
+    then create it.
+    """
+    log_folder = os.path.join(os.getenv('HOME'), LOG_FOLDER_NAME)
+    if os.path.exists(log_folder):
+        pass
+    else:
+        os.mkdir(log_folder)
+
+    return log_folder
