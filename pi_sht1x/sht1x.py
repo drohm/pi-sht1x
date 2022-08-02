@@ -229,7 +229,7 @@ class SHT1x:
 
         log_humidity = math.log(humidity / 100.0)
         ew = (m * temperature) / (tn + temperature)
-        self.dew_point = round(tn * (log_humidity + ew) / m - (log_humidity + ew), 2)
+        self.dew_point = round(tn * ((log_humidity + ew) / m - (log_humidity - ew)), 2)
 
         self.logger.info('Dew Point: {0}°C'.format(self.dew_point))
         return self.dew_point
