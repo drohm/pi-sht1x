@@ -1,4 +1,4 @@
-import os
+from os import getenv, path, mkdir
 from logging import getLogger, Formatter, WARNING
 from logging.handlers import RotatingFileHandler
 
@@ -34,10 +34,10 @@ def _get_log_folder() -> str:
     Combine and return realpath of log folder. If the folder does not exist,
     then create it.
     """
-    log_folder = os.path.join(os.getenv('HOME'), LOG_FOLDER_NAME)
-    if os.path.exists(log_folder):
+    log_folder = path.join(getenv('HOME'), LOG_FOLDER_NAME)
+    if path.exists(log_folder):
         pass
     else:
-        os.mkdir(log_folder)
+        mkdir(log_folder)
 
     return log_folder
